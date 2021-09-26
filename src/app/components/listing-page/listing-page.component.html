@@ -1,0 +1,28 @@
+<header class="header">
+    <div class="tabs">
+        <span class="tabs-tab" [class.tab-not-selected]="tabs['10movies']" (click)="tabs['10movies'] = false; tabs['10shows'] = true; reload()">
+            Top 10 movies
+            <span class="tabs-tab-line" *ngIf="!tabs['10movies']"></span>
+        </span> 
+        <span class="tabs-tab" [class.tab-not-selected]="tabs['10shows']" (click)="tabs['10movies'] = true; tabs['10shows'] = false; reload()"> 
+            Top 10 shows
+            <span class="tabs-tab-line" *ngIf="tabs['10movies']"></span>
+        </span>
+    </div>
+    <form class="search-bar" [formGroup]="searchFormGroup" (ngSubmit)="reload()">
+        <input class="search-bar-input" type="text" formControlName="inputSearch" placeholder="Type text to search">
+    </form>
+</header>
+<div class="movies" *ngIf="tabs['10shows']">
+    <div class="movies-box" *ngFor="let movie of movies">
+        <app-movie [movie]="movie"></app-movie>
+    </div>
+</div>
+<div class="movies" *ngIf="tabs['10movies']">
+    <div class="movies-box" *ngFor="let show of shows">
+        <app-show [show]="show"></app-show>
+    </div>
+</div>
+<div class="footer">
+    <button (click)="showMore()">Show more</button>
+</div>

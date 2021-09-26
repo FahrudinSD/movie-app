@@ -1,0 +1,25 @@
+<div class="template">
+    <div class="template-cover" style="background: url({{imageUrl}}) no-repeat">
+        
+    </div>
+    <div class="template-content">
+        <span class="template-title">
+        <label>Title</label>
+            {{name}}
+        </span>
+        <span class="template-description">
+        <label>Description</label>
+            {{description}}
+        </span>
+        <div style="margin-left: 5px;display: flex; align-items: center;">
+            <label for="rate">Rating</label>
+           
+            <img *ngFor="let unstad of arrayOfStared; let i = index" style="padding-left: 0.5rem;" src="././assets/star-icon-flat-full.png" alt="rated-star" width="13px" height="13px"
+            (mouseenter)="hoverRatedStar()" (mouseleave)="hoverOutRatedStar()" (click)="unrateMovie($event, i)">
+
+            <img *ngFor="let star of arrayOfUnStared; let j = index" src="././assets/white-star.jpg" width="15px" height="15px" alt="rate-star" style="margin-left: 5px;"
+            (mouseenter)="hoverStar($event)" (mouseleave)="hoverOutStar($event)" (click)="rateMovie($event, j)">
+        </div>
+        <!-- <div id="arrow-up"></div> -->
+    </div>
+</div>

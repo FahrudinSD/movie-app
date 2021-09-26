@@ -1,0 +1,95 @@
+.header {
+    background-image: linear-gradient(to right bottom, #7ed56fc8, #28b485e8);
+    background-size: cover;
+    background-position: top;
+    position:fixed; 
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
+    position: relative;
+}
+.tabs {
+    padding: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    &-tab {
+        padding: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &.tab-not-selected {
+            color: #fff;
+            // text-decoration: underline;
+            cursor: pointer;
+            user-select: none;
+            opacity: .75;
+        }
+        &-line {
+            width: 100%; height: .25rem; background-color: #000;
+        }
+    }
+    animation: moveInRight 3s ease-in;
+}
+.search-bar {
+    width: 100%;
+    margin: 0 1.5rem;
+    display: flex;
+    padding-bottom: 1.5rem;
+    padding-top: .5rem;
+    &-input {
+        padding: 0.5rem;
+        font-size: 15px;
+        letter-spacing: 0.88px;
+        width: 12.25rem;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px 1px aquamarine;
+    }
+}
+.movies {
+    justify-content: center;    
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 0 0 1px #28b485e8;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    background-image: linear-gradient(to right bottom, #7ed56fc8, #28b485e8);
+    background-size: cover;
+    background-position: top;
+    position:fixed; 
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
+    position: relative;
+    button {
+        padding: 1rem;
+        margin: 1rem;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.93px;
+    }
+}
+
+
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    50% {
+        transform: translateX(-2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
